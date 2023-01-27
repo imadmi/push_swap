@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:00:12 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/25 05:33:10 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/27 06:02:40 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putstr(char *s, int *count)
 			ft_putchar(*s++, count);
 }
 
-void	ft_print_exit(char *msg)
+void	ft_print_and_exit(char *msg)
 {
 	ft_printf("%s \n", msg);
 	exit(0);

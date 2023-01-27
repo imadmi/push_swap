@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   utile_sort_simple.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 10:28:56 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/27 07:47:53 by imimouni         ###   ########.fr       */
+/*   Created: 2023/01/25 21:48:44 by imimouni          #+#    #+#             */
+/*   Updated: 2023/01/25 05:17:31 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_index_min(t_list **stack_a, int min)
 {
-	char	*ptr;
+	int		index_zero;
+	t_list	*head;
 
-	if (size == SIZE_MAX || count == SIZE_MAX)
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	index_zero = 0;
+	head = *stack_a;
+	while (head)
+	{
+		if (head->index == min)
+			return (index_zero);
+		index_zero++;
+		head = head->next;
+	}
+	return (index_zero);
 }

@@ -6,7 +6,7 @@
 #    By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 20:48:26 by imimouni          #+#    #+#              #
-#    Updated: 2023/01/25 08:16:20 by imimouni         ###   ########.fr        #
+#    Updated: 2023/01/27 09:41:48 by imimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,3 +70,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re : fclean all
+
+.PHONY: all clean fclean re
