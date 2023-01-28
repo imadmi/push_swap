@@ -6,45 +6,35 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:17:55 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/27 12:23:47 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/28 09:58:51 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*ft_lstnew(int number)
+t_list	*ft_list_new(int number)
 {
-	t_list	*new;
+	t_list	*i;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
+	i = malloc(sizeof(t_list));
+	if (!i)
 		return (0);
-	new->value = number;
-	new->index = -1;
-	new->next = 0;
-	return (new);
+	i->value = number;
+	i->index = -1;
+	i->next = NULL;
+	return (i);
 }
 
-t_list	*ft_lstlast(t_list *head)
+void	ft_listadd_back(t_list **stack, t_list *new)
 {
-	t_list	*temp;
-
-	temp = head;
-	if (!temp)
-		return (0);
-	while (temp->next)
-		temp = temp->next;
-	return (temp);
-}
-
-void	ft_lstadd_back(t_list **stack, t_list *new)
-{
-	t_list	*n;
+	t_list	*i;
 
 	if (*stack)
 	{
-		n = ft_lstlast(*stack);
-		n->next = new;
+		i = *stack;
+		while (i->next)
+			i = i->next;
+		i->next = new;
 	}
 	else
 	{
@@ -53,22 +43,20 @@ void	ft_lstadd_back(t_list **stack, t_list *new)
 	}
 }
 
-void	ft_lstadd_front(t_list **stack, t_list *new)
+void	ft_listadd_front(t_list **stack, t_list *new)
 {
 	new->next = *stack;
 	*stack = new;
 }
 
-void	ft_show_lst(t_list *head)
+void	ft_print_list(t_list *head)
 {
-	t_list	*temp;
+	t_list	*i;
 
-	temp = head;
-	if (!temp)
-		return ;
-	while (temp)
+	i = head;
+	while (i)
 	{
-		ft_printf("-->index : %d ; value : %d\n", temp->index, temp->value);
-		temp = temp->next;
+		ft_printf("-->index : %d ; value : %d\n", i->index, i->value);
+		i = i->next;
 	}
 }

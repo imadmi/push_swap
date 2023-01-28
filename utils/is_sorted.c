@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 13:04:29 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/27 07:39:40 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/28 09:51:45 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,34 @@
 
 int	ft_is_sorted(t_list **stack)
 {
-	t_list	*temp;
+	t_list	*i;
 
-	temp = *stack;
-	while (temp && temp->next)
+	i = *stack;
+	while (i && i->next)
 	{
-		if (temp->value > temp->next->value)
+		if (i->value > i->next->value)
 			return (0);
-		temp = temp->next;
+		i = i->next;
 	}
 	return (1);
 }
 
 void	free_stack(t_list **stack)
 {
-	t_list	*head;
+	t_list	*i;
 	t_list	*tmp;
 
-	head = *stack;
-	while (head)
+	i = *stack;
+	while (i)
 	{
-		tmp = head;
-		head = head->next;
+		tmp = i;
+		i = i->next;
 		free(tmp);
 	}
 	free(stack);
 }
 
-int	ft_length_lst(t_list *head)
+int	ft_length_list(t_list *head)
 {
 	t_list	*temp;
 	int		len;

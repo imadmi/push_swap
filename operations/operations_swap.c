@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 13:15:58 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/25 05:18:27 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:30:55 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static	int	ft_swap(t_list **stack)
 	int		index;
 	int		value;
 
-	if (ft_length_lst(*stack) <= 1)
+	if (ft_length_list(*stack) <= 1)
 		return (0);
 	head = *stack;
 	next = head->next;
@@ -52,7 +52,7 @@ int	ft_sb(t_list **stack_b, int pr)
 
 int	ft_ss(t_list **stack_a, t_list **stack_b, int pr)
 {
-	if ((ft_length_lst(*stack_a) < 2) || (ft_length_lst(*stack_b) < 2))
+	if ((ft_length_list(*stack_a) < 2) || (ft_length_list(*stack_b) < 2))
 		return (0);
 	ft_swap(stack_a);
 	ft_swap(stack_b);

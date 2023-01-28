@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 17:37:13 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/25 05:18:27 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:30:55 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ static	int	ft_push(t_list **a, t_list **b)
 	t_list	*elm;
 	t_list	*next;
 
-	if (ft_length_lst(*b) < 1)
+	if (ft_length_list(*b) < 1)
 		return (0);
 	elm = *b;
 	next = elm->next;
-	ft_lstadd_front(a, elm);
+	ft_listadd_front(a, elm);
 	*b = next;
 	elm = 0;
 	free(elm);

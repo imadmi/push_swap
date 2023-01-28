@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 12:23:53 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/25 05:18:27 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/28 15:39:02 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static void	ft_suit_three(t_list *head_a, t_list **stack_a, int min)
 {
-	if (head_a->index != min && head_a->index != (2 + min))
-	{
+	// if (head_a->index != min && head_a->index != (2 + min))
+	// {
 		if (head_a->next->index == (2 + min))
 			ft_rra(stack_a, 1);
 		else
 			ft_sa(stack_a, 1);
-	}
+	// }
 }
 
 static	void	ft_sort_three(t_list **stack_a, int min)
@@ -38,7 +38,7 @@ static	void	ft_sort_three(t_list **stack_a, int min)
 	}
 	else if (head_a->index == (2 + min))
 	{
-		if (head_a->next->index == min)
+		if ((head_a->next)->index == min)
 			ft_ra(stack_a, 1);
 		else
 		{
@@ -100,7 +100,7 @@ void	ft_sort_simple(t_list **stack_a, t_list **stack_b)
 {
 	int	length;
 
-	length = ft_length_lst(*stack_a);
+	length = ft_length_list(*stack_a);
 	if (length == 2)
 		ft_sa(stack_a, 1);
 	else if (length == 3)
@@ -109,5 +109,5 @@ void	ft_sort_simple(t_list **stack_a, t_list **stack_b)
 		ft_sort_for(stack_a, stack_b, 0);
 	else if (length == 5)
 		ft_sort_five(stack_a, stack_b);
-	length = ft_length_lst(*stack_b);
+	length = ft_length_list(*stack_b);
 }

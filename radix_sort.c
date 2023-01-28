@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 00:54:49 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/25 05:17:31 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:30:55 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_radix_sort(t_list **stack_a, t_list **stack_b)
 
 	max_bits = get_max_bits(stack_a);
 	i = 0;
-	lenght = ft_length_lst(*stack_a);
+	lenght = ft_length_list(*stack_a);
 	while (i < max_bits)
 	{
 		j = 0;
@@ -55,7 +55,7 @@ void	ft_radix_sort(t_list **stack_a, t_list **stack_b)
 				ft_push_b(stack_a, stack_b, 1);
 			j++;
 		}
-		while (ft_length_lst(*stack_b))
+		while (ft_length_list(*stack_b))
 			ft_push_a(stack_a, stack_b, 1);
 		i++;
 	}

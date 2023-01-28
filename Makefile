@@ -6,7 +6,7 @@
 #    By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 04:56:21 by imimouni          #+#    #+#              #
-#    Updated: 2023/01/27 11:50:15 by imimouni         ###   ########.fr        #
+#    Updated: 2023/01/28 11:12:38 by imimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,9 @@ $(NAME)		:	$(OBJES)
 				clear
 				@echo "\033[0;92m Push_swap is ready.\033[0m"
 
+f			:	all clean
+				clear
+				@echo "\033[0;92m Push_swap is ready.\033[0m"
 
 clean		:
 				$(MAKE) -C libft clean
