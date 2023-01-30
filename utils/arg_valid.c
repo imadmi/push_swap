@@ -6,13 +6,13 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:47:13 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/28 13:07:07 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:39:02 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	ft_isnumber(char *nbr)
+int	ft_is_number(char *nbr)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ static int	ft_isnumber(char *nbr)
 	return (1);
 }
 
-static int	ft_is_duplicated(int nbr, char **av, int i)
+int	ft_is_duplicated(int nbr, char **av, int i)
 {
 	i++;
 	while (av[i])
@@ -40,27 +40,15 @@ static int	ft_is_duplicated(int nbr, char **av, int i)
 	return (0);
 }
 
-// void	ft_arg_is_valid(char **av)
-// {
-// 	int		i;
-// 	long	temp;
-
-// 	i = 1;
-// 	while (av[i])
-// 	{
-// 		temp = ft_atoi(av[i]);
-// 		if (!ft_isnumber(av[i]))
-// 			ft_print_and_exit("Error");
-// 		if (ft_is_duplicated(temp, av, i))
-// 			ft_print_and_exit("Error");
-// 		i++;
-// 	}
-// }
+int	ft_is_out_of_int_range(long nbr)
+{
+	return (nbr > 2147483647 || nbr < -2147483648);
+}
 
 void	ft_arg_is_valid(int ac, char **av)
 {
 	int		i;
-	long	temp;
+	long	num;
 	char	**str;
 
 	i = 0;
@@ -73,11 +61,13 @@ void	ft_arg_is_valid(int ac, char **av)
 	}
 	while (str[i])
 	{
-		temp = ft_atoi(str[i]);
-		if (!ft_isnumber(str[i]))
-			ft_print_and_exit("Error");
-		if (ft_is_duplicated(temp, str, i))
-			ft_print_and_exit("Error");
+		num = ft_atoi(str[i]);
+		if (!ft_is_number(str[i]))
+			ft_print_and_exit("\33[31mError\n");
+		if (ft_is_duplicated(num, str, i))
+			ft_print_and_exit("\33[31mError\n");
+		if (ft_is_out_of_int_range(num))
+			ft_print_and_exit("\33[31mError\n");
 		i++;
 	}
 	if (ac == 2)

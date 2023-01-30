@@ -1,47 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_push.c                                  :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 17:37:13 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/27 16:30:55 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:00:39 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static	int	ft_push(t_list **a, t_list **b)
+int	ft_push(l_list **a, l_list **b)
 {
-	t_list	*elm;
-	t_list	*next;
+	l_list	*elm;
+	l_list	*next;
 
-	if (ft_length_list(*b) < 1)
-		return (0);
+	// if (ft_length_list(*b) < 1)
+	// 	return (0);
 	elm = *b;
 	next = elm->next;
-	ft_listadd_front(a, elm);
+	fl_listadd_front(a, elm);
 	*b = next;
 	elm = 0;
 	free(elm);
 	return (1);
 }
 
-int	ft_push_a(t_list **stack_a, t_list **stack_b, int pr)
+int	ft_push_a(l_list **stack_a, l_list **stack_b)
 {
 	if (ft_push(stack_a, stack_b) == 0)
 		return (0);
-	if (pr)
-		ft_printf("pa\n");
+	write(1,"pa\n",3);
 	return (1);
 }
 
-int	ft_push_b(t_list **stack_a, t_list **stack_b, int pr)
+int	ft_push_b(l_list **stack_a, l_list **stack_b)
 {
 	if (ft_push(stack_b, stack_a) == 0)
 		return (0);
-	if (pr)
-		ft_printf("pb\n");
+	write(1,"pb\n",3);
 	return (1);
 }

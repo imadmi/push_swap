@@ -6,103 +6,92 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 12:23:53 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/28 15:39:02 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/30 16:57:03 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_suit_three(t_list *head_a, t_list **stack_a, int min)
+void	ft_sort_three(l_list **stack_a, int min)
 {
-	// if (head_a->index != min && head_a->index != (2 + min))
-	// {
-		if (head_a->next->index == (2 + min))
-			ft_rra(stack_a, 1);
-		else
-			ft_sa(stack_a, 1);
-	// }
-}
-
-static	void	ft_sort_three(t_list **stack_a, int min)
-{
-	t_list	*head_a;
-
-	head_a = *stack_a;
-	if (ft_is_sorted(stack_a))
-		return ;
-	if (head_a->index == min)
+	if ((*stack_a)->index == min)
 	{
-		ft_ra(stack_a, 1);
-		ft_sa(stack_a, 1);
-		ft_rra(stack_a, 1);
+		ft_ra(stack_a);
+		ft_sa(stack_a);
+		ft_rra(stack_a);
 	}
-	else if (head_a->index == (2 + min))
+	else if ((*stack_a)->index == (2 + min))
 	{
-		if ((head_a->next)->index == min)
-			ft_ra(stack_a, 1);
+		if (((*stack_a)->next)->index == min)
+			ft_ra(stack_a);
 		else
 		{
-			ft_sa(stack_a, 1);
-			ft_rra(stack_a, 1);
+			ft_sa(stack_a);
+			ft_rra(stack_a);
 		}
 	}
 	else
-		ft_suit_three(head_a, stack_a, min);
+	{
+		if ((*stack_a)->next->index == (2 + min))
+			ft_rra(stack_a);
+		else
+			ft_sa(stack_a);
+	}
 }
 
-static void	ft_sort_for(t_list **stack_a, t_list **stack_b, int min)
+void	ft_sort_for(l_list **stack_a, l_list **stack_b, int min)
 {
 	int	index_zero;
 
-	index_zero = ft_index_min(stack_a, min);
+	index_zero = ft_give_indexes_min(stack_a, min);
 	if (index_zero == 1)
-		ft_sa(stack_a, 1);
+		ft_sa(stack_a);
 	else if (index_zero == 2 || index_zero == 3)
 	{
-		ft_rra(stack_a, 1);
+		ft_rra(stack_a);
 		if (index_zero == 2)
-			ft_rra(stack_a, 1);
+			ft_rra(stack_a);
 	}
 	if (ft_is_sorted(stack_a))
 		return ;
-	ft_push_b(stack_a, stack_b, 1);
+	ft_push_b(stack_a, stack_b);
 	ft_sort_three(stack_a, 1 + min);
-	ft_push_a(stack_a, stack_b, 1);
+	ft_push_a(stack_a, stack_b);
 }
 
-static void	ft_sort_five(t_list **stack_a, t_list **stack_b)
+void	ft_sort_five(l_list **stack_a, l_list **stack_b)
 {
 	int	index_zero;
 
-	index_zero = ft_index_min(stack_a, 0);
+	index_zero = ft_give_indexes_min(stack_a, 0);
 	if (index_zero == 1)
-		ft_sa(stack_a, 1);
+		ft_sa(stack_a);
 	else if (index_zero == 2)
 	{
-		ft_ra(stack_a, 1);
-		ft_ra(stack_a, 1);
+		ft_ra(stack_a);
+		ft_ra(stack_a);
 	}
 	else if (index_zero == 3)
 	{
-		ft_rra(stack_a, 1);
-		ft_rra(stack_a, 1);
+		ft_rra(stack_a);
+		ft_rra(stack_a);
 	}
 	else if (index_zero == 4)
-		ft_rra(stack_a, 1);
+		ft_rra(stack_a);
 	if (ft_is_sorted(stack_a))
 		return ;
-	ft_push_b(stack_a, stack_b, 1);
+	ft_push_b(stack_a, stack_b);
 	ft_sort_for(stack_a, stack_b, 1);
-	ft_push_a(stack_a, stack_b, 1);
+	ft_push_a(stack_a, stack_b);
 }
 
-void	ft_sort_simple(t_list **stack_a, t_list **stack_b)
+void	ft_sort_simple(l_list **stack_a, l_list **stack_b)
 {
 	int	length;
 
 	length = ft_length_list(*stack_a);
 	if (length == 2)
-		ft_sa(stack_a, 1);
+		ft_sa(stack_a);
 	else if (length == 3)
 		ft_sort_three(stack_a, 0);
 	else if (length == 4)

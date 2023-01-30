@@ -6,17 +6,17 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:17:55 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/28 09:58:51 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:13:46 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*ft_list_new(int number)
+l_list	*fl_list_new(int number)
 {
-	t_list	*i;
+	l_list	*i;
 
-	i = malloc(sizeof(t_list));
+	i = malloc(sizeof(l_list));
 	if (!i)
 		return (0);
 	i->value = number;
@@ -25,9 +25,9 @@ t_list	*ft_list_new(int number)
 	return (i);
 }
 
-void	ft_listadd_back(t_list **stack, t_list *new)
+void	fl_listadd_back(l_list **stack, l_list *new)
 {
-	t_list	*i;
+	l_list	*i;
 
 	if (*stack)
 	{
@@ -43,20 +43,20 @@ void	ft_listadd_back(t_list **stack, t_list *new)
 	}
 }
 
-void	ft_listadd_front(t_list **stack, t_list *new)
+void	fl_listadd_front(l_list **stack, l_list *new)
 {
 	new->next = *stack;
 	*stack = new;
 }
 
-void	ft_print_list(t_list *head)
+void	ft_print_list(l_list *root)
 {
-	t_list	*i;
+	l_list	*i;
 
-	i = head;
+	i = root;
 	while (i)
 	{
-		ft_printf("-->index : %d ; value : %d\n", i->index, i->value);
+		printf("-->index : %d ; value : %d\n", i->index, i->value);
 		i = i->next;
 	}
 }

@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 00:54:49 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/30 16:52:45 by imimouni         ###   ########.fr       */
+/*   Created: 2022/10/22 18:01:43 by imimouni          #+#    #+#             */
+/*   Updated: 2023/01/30 17:12:04 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	ft_radix_sort(l_list **stack_a, l_list **stack_b)
+int	ft_atoi(const char *str)
 {
+	long	num;
+	int		sign;
 	int		i;
-	int		j;
-	int		lenght;
-	l_list	*root_a;
 
 	i = 0;
-	lenght = ft_length_list(*stack_a);
-	while (1)
+	sign = 1;
+	num = 0;
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
+		sign = sign * -1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		j = 0;
-		while (j < lenght)
-		{
-			root_a = *stack_a;
-			if (((root_a->index >> i) & 1) == 1)
-				ft_ra(stack_a);
-			else
-				ft_push_b(stack_a, stack_b);
-			j++;
-		}
-		while (ft_length_list(*stack_b))
-			ft_push_a(stack_a, stack_b);
-		if (ft_is_sorted(stack_a))
-			break;
+		num = (num * 10) + str[i] - '0';
 		i++;
 	}
+	return (num * sign);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }

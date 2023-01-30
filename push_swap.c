@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:19:09 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/28 13:00:55 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/30 16:46:06 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 
 int	main(int ac, char **av)
 {
-	t_list	**stack_a;
-	t_list	**stack_b;
+	l_list	**stack_a;
+	l_list	**stack_b;
 
 	if (ac > 1)
 	{
 		ft_arg_is_valid(ac, av);
-		stack_a = malloc(sizeof(t_list));
-		stack_b = malloc(sizeof(t_list));
+		stack_a = malloc(sizeof(l_list));
+		stack_b = malloc(sizeof(l_list));
 		*stack_a = 0;
 		*stack_b = 0;
 		ft_init_stack(stack_a, ac, av);
-		if (ft_is_sorted(stack_a) == 1)
+		ft_give_indexes(stack_a);
+		if (ft_is_sorted(stack_a))
 		{
-			free_stack(stack_a);
 			free_stack(stack_b);
+			free_stack(stack_a);
 			exit(0);
 		}
 		if (ft_length_list(*stack_a) <= 5)

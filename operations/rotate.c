@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_rotate.c                                :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 17:38:05 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/27 17:27:37 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:02:51 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	ft_rotate(t_list **stack)
+int	ft_rotate(l_list **stack)
 {
-	t_list	*i;
-	t_list	*last;
+	l_list	*i;
+	l_list	*last;
 
 	if (ft_length_list(*stack) <= 1)
 		return (0);
@@ -29,31 +29,28 @@ static int	ft_rotate(t_list **stack)
 	return (1);
 }
 
-int	ft_ra(t_list **stack_a, int pr)
+int	ft_ra(l_list **stack_a)
 {
 	if (ft_rotate(stack_a) == 0)
 		return (0);
-	if (pr)
-		ft_printf("ra\n");
+	write(1,"ra\n",3);
 	return (1);
 }
 
-int	ft_rb(t_list **stack_b, int pr)
+int	ft_rb(l_list **stack_b)
 {
 	if (ft_rotate(stack_b) == 0)
 		return (0);
-	if (pr)
-		ft_printf("rb\n");
+	write(1,"rb\n",3);
 	return (1);
 }
 
-int	ft_rr(t_list **stack_a, t_list **stack_b, int pr)
+int	ft_rr(l_list **stack_a, l_list **stack_b)
 {
 	if (ft_length_list(*stack_a) <= 1 || ft_length_list(*stack_b) <= 1)
 		return (0);
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);
-	if (pr)
-		ft_printf("rr\n");
+	write(1,"rr\n",3);
 	return (1);
 }

@@ -1,55 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   util_sort_simple.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 13:04:29 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/30 14:37:01 by imimouni         ###   ########.fr       */
+/*   Created: 2023/01/25 21:48:44 by imimouni          #+#    #+#             */
+/*   Updated: 2023/01/30 17:04:56 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-int	ft_is_sorted(l_list **stack)
+int	ft_give_indexes_min(l_list **stack_a, int min)
 {
-	l_list	*i;
+	int		index_zero;
+	l_list	*root;
 
-	i = *stack;
-	while (i->next)
-	{
-		if (i->value > i->next->value)
-			return (0);
-		i = i->next;
-	}
-	return (1);
-}
-
-void	free_stack(l_list **stack)
-{
-	l_list	*i;
-	l_list	*temp;
-
-	i = *stack;
-	while (i)
-	{
-		temp = i;
-		i = i->next;
-		free(temp);
-	}
-	free(stack);
-}
-
-int	ft_length_list(l_list *root)
-{
-	int		len;
-
-	len = 0;
+	index_zero = 0;
+	root = *stack_a;
 	while (root)
 	{
+		if (root->index == min)
+			return (index_zero);
+		index_zero++;
 		root = root->next;
-		len++;
 	}
-	return (len);
+	return (index_zero);
+}
+
+void	ft_print_and_exit(char *msg)
+{
+	write(2, msg, 12);
+	exit(0);
 }

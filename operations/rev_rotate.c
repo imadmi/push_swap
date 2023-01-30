@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_rev_rotate.c                            :+:      :+:    :+:   */
+/*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 17:39:20 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/27 17:26:18 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:01:37 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	ft_reverse_rotate(t_list **stack)
+int	ft_reverse_rotate(l_list **stack)
 {
-	t_list	*temp;
-	t_list	*last;
+	l_list	*temp;
+	l_list	*last;
 
 	if (ft_length_list(*stack) <= 1)
 		return (0);
@@ -35,31 +35,28 @@ static int	ft_reverse_rotate(t_list **stack)
 	return (1);
 }
 
-int	ft_rra(t_list **stack_a, int pr)
+int	ft_rra(l_list **stack_a)
 {
 	if (ft_reverse_rotate(stack_a) == 0)
 		return (0);
-	if (pr)
-		ft_printf("rra\n");
+	write(1,"rra\n",4);
 	return (1);
 }
 
-int	ft_rrb(t_list **stack_b, int pr)
+int	ft_rrb(l_list **stack_b)
 {
 	if (ft_reverse_rotate(stack_b) == 0)
 		return (0);
-	if (pr)
-		ft_printf("rrb\n");
+	write(1,"rrb\n",4);
 	return (1);
 }
 
-int	ft_rrr(t_list **stack_a, t_list **stack_b, int pr)
+int	ft_rrr(l_list **stack_a, l_list **stack_b)
 {
 	if (ft_length_list(*stack_a) <= 1 || ft_length_list(*stack_b) <= 1)
 		return (0);
 	ft_reverse_rotate(stack_a);
 	ft_reverse_rotate(stack_b);
-	if (pr)
-		ft_printf("rrr\n");
+	write(1,"rrr\n",4);
 	return (1);
 }
