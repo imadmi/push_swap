@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:19:09 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/30 16:46:06 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/31 13:35:42 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int ac, char **av)
 			ft_sort_simple(stack_a, stack_b);
 		else
 			ft_radix_sort(stack_a, stack_b);
+		ft_print_list(*stack_a);//
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:17:55 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/30 17:13:46 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/31 13:19:19 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,13 @@ void	fl_listadd_front(l_list **stack, l_list *new)
 	*stack = new;
 }
 
-void	ft_print_list(l_list *root)
-{
-	l_list	*i;
-
-	i = root;
-	while (i)
+void ft_print_list(l_list *root) {
+    l_list *i = root;
+    while (i) 
 	{
-		printf("-->index : %d ; value : %d\n", i->index, i->value);
+		printf("%d ", i->value);
 		i = i->next;
-	}
+    }
+	// printf("%d \n\n", i->index + 1);
+    printf("\n");
 }

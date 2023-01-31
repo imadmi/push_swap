@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util_sort_simple.c                                 :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 21:48:44 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/31 14:03:18 by imimouni         ###   ########.fr       */
+/*   Created: 2023/01/31 11:39:20 by imimouni          #+#    #+#             */
+/*   Updated: 2023/01/31 11:39:33 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_give_indexes_min(l_list **stack_a, int min)
+void	ft_sort_three(l_list **stack_a)
 {
-	int		index_zero;
-	l_list	*root;
-
-	index_zero = 0;
-	root = *stack_a;
-	while (root)
+	if ((*stack_a)->index == 0)
 	{
-		if (root->index == min)
-			return (index_zero);
-		index_zero++;
-		root = root->next;
+		ft_ra(stack_a);
+		ft_sa(stack_a);
+		ft_rra(stack_a);
 	}
-	return (index_zero);
-}
-
-void	ft_print_and_exit(char *msg)
-{
-	write(2, msg, 12);
-	exit(0);
+	else if ((*stack_a)->index == 2)
+	{
+		if (((*stack_a)->next)->index == 0)
+			ft_ra(stack_a);
+		else
+		{
+			ft_sa(stack_a);
+			ft_rra(stack_a);
+		}
+	}
+	else
+	{
+		if ((*stack_a)->next->index == 2)
+			ft_rra(stack_a);
+		else
+			ft_sa(stack_a);
+	}
 }
