@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 21:48:44 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/31 14:03:18 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/01/31 14:13:36 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	ft_give_indexes_min(l_list **stack_a, int min)
 
 	index_zero = 0;
 	root = *stack_a;
-	while (root)
+	while ((root))
 	{
-		if (root->index == min)
+		if ((root)->index == min)
 			return (index_zero);
 		index_zero++;
-		root = root->next;
+		(root) = (root)->next;
 	}
 	return (index_zero);
 }
