@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 13:50:47 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/31 20:20:13 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/01 10:43:37 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_sort_five(l_list **stack_a, l_list **stack_b)
 {
 	int	index_zero;
 
-	index_zero = ft_give_indexes_min(stack_a, 0);
+	index_zero = ft_index_min(stack_a, 0);
 	if (index_zero == 1)
 		ft_sa(stack_a);
 	else if (index_zero == 2)

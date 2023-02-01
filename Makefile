@@ -6,7 +6,7 @@
 #    By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 04:56:21 by imimouni          #+#    #+#              #
-#    Updated: 2023/01/31 11:42:15 by imimouni         ###   ########.fr        #
+#    Updated: 2023/02/01 10:55:49 by imimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS		= 	push_swap.c \
 				operations/rotate.c \
 				operations/swap.c \
 				sort_simple.c \
-				util_sort_simple.c \
+				sort_simple_utils.c \
 				radix_sort.c \
 				ft_split.c \
 				ft_atoi.c \

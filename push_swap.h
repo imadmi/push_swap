@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:29:43 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/31 20:19:47 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/01 10:43:37 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ void	ft_init_stack(l_list **stack_a, int ac, char **av);
 int		ft_is_sorted(l_list **stack);
 void	free_stack(l_list **stack);
 
-void	ft_sort_three(l_list **stack_a, int min);
-void	ft_sort_four(l_list **stack_a, l_list **stack_b, int min);
+void	ft_sort_three(l_list **stack_a, int min_index);
+void	ft_sort_four(l_list **stack_a, l_list **stack_b, int min_index);
 void	ft_sort_five(l_list **stack_a, l_list **stack_b);
 void	ft_give_indexes(l_list **stack_a);
 
 void	ft_sort_simple(l_list **stack_a, l_list **stack_b);
-int		ft_give_indexes_min(l_list **stack_a, int min);
+int		ft_index_min(l_list **stack_a, int min);
 void	ft_radix_sort(l_list **stack_a, l_list **stack_b);
 void	ft_print_and_exit(char *msg);
 char	**ft_split(char	const *s, char c);
