@@ -6,13 +6,13 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:17:55 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/31 15:27:24 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/01 17:07:06 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-l_list	*fl_list_new(int number)
+l_list	*ft_list_new(int number)
 {
 	l_list	*i;
 
@@ -25,7 +25,7 @@ l_list	*fl_list_new(int number)
 	return (i);
 }
 
-void	fl_listadd_back(l_list **stack, l_list *new)
+void	ft_listadd_back(l_list **stack, l_list *new)
 {
 	l_list	*i;
 
@@ -41,12 +41,6 @@ void	fl_listadd_back(l_list **stack, l_list *new)
 		*stack = new;
 		(*stack)->next = NULL;
 	}
-}
-
-void	fl_listadd_front(l_list **stack, l_list *new)
-{
-	new->next = *stack;
-	*stack = new;
 }
 
 void ft_print_list(l_list *root) 

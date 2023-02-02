@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 17:39:20 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/30 17:01:37 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:41:37 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,16 @@ int	ft_reverse_rotate(l_list **stack)
 	return (1);
 }
 
-int	ft_rra(l_list **stack_a)
+void	ft_rra(l_list **stack_a)
 {
-	if (ft_reverse_rotate(stack_a) == 0)
-		return (0);
-	write(1,"rra\n",4);
-	return (1);
+	if (ft_reverse_rotate(stack_a) == 1)
+		write(1,"rra\n",4);
+	return ;
 }
 
-int	ft_rrb(l_list **stack_b)
+void	ft_rrb(l_list **stack_b)
 {
-	if (ft_reverse_rotate(stack_b) == 0)
-		return (0);
-	write(1,"rrb\n",4);
-	return (1);
-}
-
-int	ft_rrr(l_list **stack_a, l_list **stack_b)
-{
-	if (ft_length_list(*stack_a) <= 1 || ft_length_list(*stack_b) <= 1)
-		return (0);
-	ft_reverse_rotate(stack_a);
-	ft_reverse_rotate(stack_b);
-	write(1,"rrr\n",4);
-	return (1);
+	if (ft_reverse_rotate(stack_b) == 1)
+		write(1,"rrb\n",4);
+	return ;
 }

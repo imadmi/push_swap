@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util_sort_simple.c                                 :+:      :+:    :+:   */
+/*   sort_simple_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 21:48:44 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/01 10:52:27 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/01 12:48:15 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_index_min(l_list **stack_a, int min)
+int	ft_pos_index_min(l_list **stack_a, int min)
 {
 	int		index_min;
 	l_list	*i;
@@ -21,12 +21,12 @@ int	ft_index_min(l_list **stack_a, int min)
 	i = *stack_a;
 	while (i)
 	{
-		if ((i)->index == min)
+		if (i->index == min)
 			return (index_min);
 		index_min++;
 		i = i->next;
 	}
-	return (index_min);
+	return (-1);
 }
 
 void	ft_print_and_exit(char *msg)

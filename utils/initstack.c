@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 05:16:31 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/30 16:46:06 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:36:41 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ void	ft_init_stack(l_list **stack_a, int ac, char **av)
 	}
 	while (str[i])
 	{
-		new = fl_list_new(ft_atoi(str[i]));
-		fl_listadd_back(stack_a, new);
+		new = ft_list_new(ft_atoi(str[i]));
+		ft_listadd_back(stack_a, new);
 		i++;
 	}
 	if (ac == 2)
