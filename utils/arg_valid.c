@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:47:13 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/01 12:46:21 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/03 16:18:25 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ void	ft_arg_is_valid(int ac, char **av)
 		if (!ft_is_number(str[i]))
 			ft_print_and_exit("\33[31mError\n");
 		if (ft_is_duplicated(num, str, i))
-			ft_print_and_exit("\33[31mError\n");
-		if (ft_is_out_of_int_range(num))
 			ft_print_and_exit("\33[31mError\n");
 		i++;
 	}

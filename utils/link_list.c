@@ -6,17 +6,17 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:17:55 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/01 17:07:06 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:39:23 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-l_list	*ft_list_new(int number)
+t_list	*ft_list_new(int number)
 {
-	l_list	*i;
+	t_list	*i;
 
-	i = malloc(sizeof(l_list));
+	i = malloc(sizeof(t_list));
 	if (!i)
 		return (0);
 	i->value = number;
@@ -25,9 +25,9 @@ l_list	*ft_list_new(int number)
 	return (i);
 }
 
-void	ft_listadd_back(l_list **stack, l_list *new)
+void	ft_listadd_back(t_list **stack, t_list *new)
 {
-	l_list	*i;
+	t_list	*i;
 
 	if (*stack)
 	{
@@ -43,9 +43,9 @@ void	ft_listadd_back(l_list **stack, l_list *new)
 	}
 }
 
-void ft_print_list(l_list *root) 
-{	
-	l_list	*temp;
+void	ft_print_list(t_list *root)
+{
+	t_list	*temp;
 
 	temp = root;
 	if (!temp)

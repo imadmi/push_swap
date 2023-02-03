@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 05:16:31 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/01 16:36:41 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:48:43 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	ft_free(char **str)
 	free(str);
 }
 
-int	get_min(l_list *root)
+int	get_min(t_list *root)
 {
-	l_list	*temp;
-	l_list	*temp2;
+	t_list	*temp;
+	t_list	*temp2;
 	int		min;
 
 	temp = root;
@@ -37,7 +37,7 @@ int	get_min(l_list *root)
 		if (temp2->index == -1)
 		{
 			min = temp2->value;
-			break;
+			break ;
 		}
 		temp2 = temp2->next;
 	}
@@ -50,34 +50,33 @@ int	get_min(l_list *root)
 	return (min);
 }
 
-void	ft_give_indexes(l_list **stack_a)
+void	ft_give_indexes(t_list **stack)
 {
 	int		min;
-	l_list	*temp;
+	t_list	*temp;
 	int		index;
 
-	min = get_min(*stack_a);
-	temp = *stack_a;
+	min = get_min(*stack);
+	temp = *stack;
 	index = 0;
 	while (temp)
 	{
-		if ( temp->index == -1 &&temp->value == min)
+		if (temp->index == -1 && temp->value == min)
 		{
 			temp->index = index;
 			index++;
-			temp = *stack_a;
-			min = get_min(*stack_a);	
+			temp = *stack;
+			min = get_min(*stack);
 		}
 		else
 			temp = temp->next;
 	}
-	
 }
 
-void	ft_init_stack(l_list **stack_a, int ac, char **av)
+void	ft_init_stack(t_list **stack_a, int ac, char **av)
 {
 	int		i;
-	l_list	*new;
+	t_list	*new;
 	char	**str;
 
 	i = 0;

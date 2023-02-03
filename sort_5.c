@@ -6,13 +6,13 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 13:50:47 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/01 12:02:31 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:29:10 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_five(l_list **stack_a, l_list **stack_b)
+void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 {
 	int	index_min;
 

@@ -6,17 +6,19 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 13:04:29 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/01 13:19:11 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/03 15:52:29 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_is_sorted(l_list **stack)
+int	ft_is_sorted(t_list **stack)
 {
-	l_list	*i;
+	t_list	*i;
 
 	i = *stack;
+	if (!i)
+		return (1);
 	while (i->next)
 	{
 		if (i->value > i->next->value)
@@ -26,10 +28,10 @@ int	ft_is_sorted(l_list **stack)
 	return (1);
 }
 
-void	free_stack(l_list **stack)
+void	free_stack(t_list **stack)
 {
-	l_list	*i;
-	l_list	*temp;
+	t_list	*i;
+	t_list	*temp;
 
 	i = *stack;
 	while (i)
@@ -41,7 +43,7 @@ void	free_stack(l_list **stack)
 	free(stack);
 }
 
-int	ft_length_list(l_list *root)
+int	ft_length_list(t_list *root)
 {
 	int		len;
 

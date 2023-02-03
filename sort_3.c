@@ -6,13 +6,13 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 11:39:20 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/01 10:40:44 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:29:10 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_three(l_list **stack_a, int min_index)
+void	ft_sort_three(t_list **stack_a, int min_index)
 {
 	if ((*stack_a)->index == min_index)
 	{
