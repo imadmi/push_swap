@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:29:43 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/03 16:16:10 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/03 16:22:54 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct x
+typedef struct s_list
 {
 	int				value;
 	int				index;
-	struct x		*next;
+	struct s_list		*next;
 }		t_list;
 
 int		ft_atoi(const char *str);
