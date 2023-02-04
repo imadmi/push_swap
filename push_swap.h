@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:29:43 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/03 16:22:54 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/04 13:08:03 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 typedef struct s_list
 {
-	int				value;
-	int				index;
+	int					value;
+	int					index;
 	struct s_list		*next;
 }		t_list;
 
