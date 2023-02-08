@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 18:01:43 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/03 16:15:30 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/08 05:44:10 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,36 @@ int	ft_isdigit(int c)
 		return (1);
 	else
 		return (0);
+}
+
+int	ft_strlen(const char *s)
+{
+	int			i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strjoin(const char *s1, const char *s2)
+{
+	char	*str;
+	int		size;
+	int		i;
+
+	if (!s1 || !s2)
+		return (NULL);
+	size = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	i = -1;
+	while (s1[++i])
+		str[i] = s1[i];
+	i = -1;
+	while (s2[++i])
+		str[ft_strlen(s1) + i] = s2[i];
+	str[size] = '\0';
+	return (str);
 }

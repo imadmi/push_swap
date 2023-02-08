@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 13:04:29 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/03 15:52:29 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/08 06:14:37 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,32 @@ int	ft_length_list(t_list *root)
 		len++;
 	}
 	return (len);
+}
+
+int	ft_is_number(char *nbr)
+{
+	int	i;
+
+	i = 0;
+	if (nbr[0] == '-' || nbr[0] == '+')
+		i++;
+	while (nbr[i])
+	{
+		if (!ft_isdigit(nbr[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_is_duplicated(int nbr, char **av, int i)
+{
+	i++;
+	while (av[i])
+	{
+		if (ft_atoi(av[i]) == nbr)
+			return (1);
+		i++;
+	}
+	return (0);
 }
