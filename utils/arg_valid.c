@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:47:13 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/08 06:35:06 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:09:32 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,42 +49,45 @@ char	*concat_strs(char **str, int space_count)
 {
 	int		i;
 	char	*concat;
-	char	*temp;
 
-	concat = malloc(sizeof(*concat) * (total_size(str) + space_count + 1));
+	concat = malloc(total_size(str) + space_count);
 	if (!concat)
 		return (0);
-	*concat = '\0';
+	concat[0] = '\0';
 	i = 0;
 	while (str[i])
 	{
-		temp = ft_strjoin(concat, " ");
-		free(concat);
-		concat = ft_strjoin(temp, str[i]);
-		free(temp);
+		ft_strjoin(concat, str[i]);
 		i++;
 	}
 	return (concat);
 }
 
-void	ft_arg_is_valid(int ac, char **av)
+void	ft_arg_is_valid(t_list **stack_a, int ac, char **av)
 {
 	int		i;
+	t_list	*new;
 	long	num;
 	char	*str1;
 	char	**str;
 
-	i = 0;
+	i = -1;
 	check_empty_args(av);
 	str1 = concat_strs(av + 1, ac - 1);
 	str = ft_split(str1, ' ');
-	while (str[i])
+	free(str1);
+	while (str[++i])
 	{
 		num = ft_atoi(str[i]);
-		if (!ft_is_number(str[i]))
+		if (!ft_is_number(str[i]) || ft_is_duplicated(num, str, i))
 			ft_print_and_exit("\33[31mError\n");
-		if (ft_is_duplicated(num, str, i))
-			ft_print_and_exit("\33[31mError\n");
-		i++;
 	}
+	i = -1;
+	while (str[++i])
+	{
+		new = ft_list_new(ft_atoi(str[i]));
+		ft_listadd_back(stack_a, new);
+		free(str[i]);
+	}
+	free(str);
 }

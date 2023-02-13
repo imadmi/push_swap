@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 17:37:13 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/03 12:31:57 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:06:45 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	ft_push(t_list **stack_1, t_list **stack_2)
 	*stack_1 = temperary;
 	*stack_2 = new_root;
 	temperary = 0;
-	free(temperary);
 	return (1);
 }
 

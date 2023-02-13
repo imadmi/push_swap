@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:29:43 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/08 06:32:52 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:04:49 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ typedef struct s_list
 
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
-void	ft_arg_is_valid(int ac, char **av);
+void	ft_arg_is_valid(t_list **stack_a, int ac, char **av);
 void	ft_free(char **str);
-void	ft_init_stack(t_list **stack_a, int ac, char **av);
 int		ft_is_sorted(t_list **stack);
 void	free_stack(t_list **stack);
 int		ft_is_out_of_int_range(long nbr);
@@ -46,7 +45,7 @@ void	ft_radix_sort(t_list **stack_a, t_list **stack_b);
 void	ft_print_and_exit(char *msg);
 char	**ft_split(char	const *s, char c);
 int		ft_strlen(const char *s);
-char	*ft_strjoin(const char *s1, const char *s2);
+void	ft_strjoin(char *s1, char *s2);
 void	ft_sa(t_list **stack_a);
 void	ft_sb(t_list **stack_b);
 void	ft_push_a(t_list **stack_a, t_list **stack_b);
@@ -60,5 +59,6 @@ void	ft_listadd_back(t_list **stack, t_list *new);
 int		ft_length_list(t_list *root);
 void	ft_print_list(t_list *root);
 char	*concat_strs(char **str, int space_count);
+void	ft_the_rest(t_list **stack_a, t_list **stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:15:52 by imimouni          #+#    #+#             */
-/*   Updated: 2023/01/30 17:17:14 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/12 02:28:46 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,3 @@ char	**ft_split(char	const *s, char c)
 	spl_words = ft_fill(s, countwords, c, spl_words);
 	return (spl_words);
 }
-
-// int		main()
-// {
-// 	int i = -1;
-// 	char **tab;	
-// 	tab = ft_split("My mane is Imad",' ');
-// 	while (++i < 4)
-// 		printf("%d : %s\n", i, tab[i]);
-// 	return (0);
-// }
