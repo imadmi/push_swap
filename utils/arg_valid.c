@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:47:13 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/13 11:09:32 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/14 04:20:25 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	check_empty_args(char **argv)
 	i = 0;
 	while (argv[i])
 	{
+		if (is_all_spaces(argv[i]))
+			ft_print_and_exit("\33[31mError\n");
 		if (argv[i][0] == '\0')
 			ft_print_and_exit("\33[31mError\n");
 		i++;

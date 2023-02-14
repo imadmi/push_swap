@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 21:48:44 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/03 12:31:17 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/14 04:20:44 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,18 @@ void	ft_print_and_exit(char *msg)
 {
 	write(2, msg, 11);
 	exit(0);
+}
+
+int	is_all_spaces(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
 }

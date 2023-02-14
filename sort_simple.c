@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:23:53 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/13 09:44:40 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/14 03:25:50 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ void	ft_sort_simple(t_list **stack_a, t_list **stack_b)
 		ft_sort_four(stack_a, stack_b, 0);
 	else if (length == 5)
 		ft_sort_five(stack_a, stack_b);
-	free_stack(stack_b);
-	free_stack(stack_a);
+	ft_the_rest(stack_a, stack_b);
 }

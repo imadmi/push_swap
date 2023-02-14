@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:29:43 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/13 11:04:49 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/14 04:20:59 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ int		ft_length_list(t_list *root);
 void	ft_print_list(t_list *root);
 char	*concat_strs(char **str, int space_count);
 void	ft_the_rest(t_list **stack_a, t_list **stack_b);
+int		is_all_spaces(char *str);
 
 #endif
