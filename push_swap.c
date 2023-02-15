@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:19:09 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/14 04:22:54 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/15 06:29:33 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_the_rest(t_list **stack_a, t_list **stack_b)
 {
 	free_stack(stack_b);
 	free_stack(stack_a);
-	system("leaks push_swap");
-	while(1);
+	// system("leaks push_swap");
+	// while(1);
 	exit(EXIT_SUCCESS);
 }
 

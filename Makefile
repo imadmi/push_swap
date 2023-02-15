@@ -6,7 +6,7 @@
 #    By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 04:56:21 by imimouni          #+#    #+#              #
-#    Updated: 2023/02/12 07:47:40 by imimouni         ###   ########.fr        #
+#    Updated: 2023/02/15 06:22:49 by imimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ OBJES = $(SRCS:.c=.o)
 
 NAME 		= push_swap
 CC 			= cc
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -Wall -Wextra -Werror -fsanitize=address
 RM 			= rm -rf
 
 %.o			:	%.c push_swap.h

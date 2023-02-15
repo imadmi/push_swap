@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:47:13 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/14 04:20:25 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/15 06:17:31 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*concat_strs(char **str, int space_count)
 	int		i;
 	char	*concat;
 
-	concat = malloc(total_size(str) + space_count);
+	concat = malloc(total_size(str) + space_count + 1);
 	if (!concat)
 		return (0);
 	concat[0] = '\0';
