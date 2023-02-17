@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:19:09 by imimouni          #+#    #+#             */
-/*   Updated: 2023/02/15 06:29:33 by imimouni         ###   ########.fr       */
+/*   Updated: 2023/02/17 04:23:40 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ void	ft_the_rest(t_list **stack_a, t_list **stack_b)
 {
 	free_stack(stack_b);
 	free_stack(stack_a);
-	// system("leaks push_swap");
-	// while(1);
 	exit(EXIT_SUCCESS);
+}
+
+void s()
+{
+	system("leaks push_swap");
 }
 
 int	main(int ac, char **av)
@@ -26,6 +29,7 @@ int	main(int ac, char **av)
 	t_list	**stack_a;
 	t_list	**stack_b;
 
+	// atexit(s);
 	if (ac > 1)
 	{
 		stack_a = malloc(sizeof(t_list));
